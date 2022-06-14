@@ -30,29 +30,45 @@ inventory = []
 ## A dictionary linking a room to other rooms
 rooms = {
 
-            'Hall' : {
+            'Shrek\'s House' : {
                   'south' : 'Kitchen',
                   'east'  : 'Dining Room',
                   'item'  : 'key'
                 },
 
-            'Kitchen' : {
+            'Swamp 1' : {
                   'north' : 'Hall',
                   'item'  : 'monster',
                 },
-            'Dining Room' : {
+            'Swamp 7' : {
                   'west' : 'Hall',
                   'south': 'Garden',
                   'item' : 'potion',
                   'north' : 'Pantry',
                },
-            'Garden' : {
+            'Swamp 8' : {
                   'north' : 'Dining Room'
                },
-            'Pantry' : {
+            'Swamp 6' : {
                   'south' : 'Dining Room',
                   'item' : 'cookie',
-            }
+               },
+            'Swamp 2' : {
+                  'east' : 'Shrek\'s House',
+                  'item' : 'Thing',
+               },
+            'Swamp 3' : {
+                  'south' : 'Swamp 2',
+                  'item' : 'another item',
+               },
+            'Swamp 4' : {
+                  'north' : 'Swamp 2',
+                  'item' : 'another item',
+               },
+            'Swamp 5' : {
+                  'south' : 'Shrek\'s House',
+               },
+
          }
 
 #start the player in the Hall
