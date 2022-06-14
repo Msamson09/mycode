@@ -5,7 +5,7 @@
 def showInstructions():
   #print a main menu and the commands
   print('''
-RPG Game
+Shrek Adventure
 ========
 Commands:
   go [direction]
@@ -33,24 +33,24 @@ rooms = {
             'Shrek\'s House' : {
                   'south' : 'Kitchen',
                   'east'  : 'Dining Room',
-                  'item'  : 'key'
+                  'ogre'  : 'Shrek',
+                  'item' : 'sign',
                 },
 
             'Swamp 1' : {
                   'north' : 'Hall',
-                  'item'  : 'monster',
                 },
             'Swamp 7' : {
-                  'west' : 'Hall',
-                  'south': 'Garden',
+                  'west' : 'Shrek\'s House',
+                  'south': 'Swamp 8',
                   'item' : 'potion',
-                  'north' : 'Pantry',
+                  'north' : 'Swamp 6',
                },
             'Swamp 8' : {
-                  'north' : 'Dining Room'
+                  'north' : 'Swamp 7'
                },
             'Swamp 6' : {
-                  'south' : 'Dining Room',
+                  'south' : 'Swamp 7',
                   'item' : 'cookie',
                },
             'Swamp 2' : {
@@ -72,7 +72,7 @@ rooms = {
          }
 
 #start the player in the Hall
-currentRoom = 'Hall'
+currentRoom = 'Swamp 1'
 
 showInstructions()
 
