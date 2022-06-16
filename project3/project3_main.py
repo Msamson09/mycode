@@ -1,4 +1,4 @@
-    #!/usr/bin/python3
+#!/usr/bin/python3
 """This script is used to add a user, create directories inside the home directory
    and then add files to those directories across three separate servers"""
 
