@@ -1,3 +1,23 @@
+    #!/usr/bin/python3
+"""This script is used to add a user, create directories inside the home directory
+   and then add files to those directories across three separate servers"""
+
+import paramiko
+import os
+import json
+
+def main():
+    """Our runtime code that calls other functions"""
+    # list of servers
+    servers = [
+             {"un": "bender", "ip": "10.10.2.3"}, 
+             {"un": "zoidberg", "ip": "10.10.2.5"},
+             {"un": "fry", "ip": "10.10.2.4"}
+            ]
+
+    # new directories to be added
+    new_dirs = ["lions", "tigers", "bears", "oh_my"]
+
     # new files to be put into each directory
     new_docs = ["dorothy.txt", "scarecrow.txt", "lion.txt", "tin_man.txt"]
 
