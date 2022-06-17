@@ -1,0 +1,9 @@
+{"servers" :[
+{"un": "bender", "ip": "10.10.2.3"},
+{"un": "zoidberg", "ip": "10.10.2.5"},
+{"un": "fry", "ip": "10.10.2.4"}
+],
+
+"new_dirs" : ["lions", "tigers", "bears", "oh_my"],
+
+"new_docs" : ["dorothy.txt", "scarecrow.txt", "lion.txt", "tin_man.txt"]}
