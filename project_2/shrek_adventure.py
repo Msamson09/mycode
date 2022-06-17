@@ -15,7 +15,7 @@ Commands:
 def showStatus():
   #print the player's current status
   print('---------------------------')
-  print('You are in the ' + currentRoom)
+  print('You are in ' + currentRoom)
   #print the current inventory
   print('Inventory : ' + str(inventory))
   #print an item if there is one
@@ -25,6 +25,9 @@ def showStatus():
 
 #an inventory, which is initially empty
 inventory = []
+
+# sets up count variable
+count = 0
 
 #a dictionary linking a room to other rooms
 ## A dictionary linking a room to other rooms
@@ -53,22 +56,23 @@ rooms = {
                },
             'Swamp 6' : {
                   'south' : 'Swamp 7',
-                  'item' : 'cookie',
+                  'item' : 'donkey',
                },
             'Swamp 2' : {
                   'east' : 'Shrek\'s House',
                   'item' : 'Thing',
+                  'north' : 'Swamp 3',
+                  'south' : 'Swamp 4',
                },
             'Swamp 3' : {
                   'south' : 'Swamp 2',
-                  'item' : 'Donkey',
                },
             'Swamp 4' : {
                   'north' : 'Swamp 2',
-                  'item' : 'another item',
                },
             'Swamp 5' : {
                   'south' : 'Shrek\'s House',
+                  'item' : 'another item',
                },
 
          }
@@ -121,11 +125,18 @@ while True:
       print('Can\'t get ' + move[1] + '!')
       
   ## Define how a player can win
-  if currentRoom == 'Swamp 8' and 'Donkey' in inventory and 'potion' in inventory:
+  if currentRoom == 'Swamp 8' and 'donkey' in inventory and 'potion' in inventory:
       print('You escaped the swamp!!! But your journey has only begun... YOU WIN!')
       break
 
-  ## If a player enters Swamp 4 and get 'another item', they lose
-  elif currentRoom == 'Swamp 4' and 'another item' in inventory:
+  ## If a player enters Swamp 5 and get 'another item', they lose
+  elif currentRoom == 'Swamp 5' and 'another item' in inventory:
       print('The swamp begins to swallow you whole...you will never esacpe')
       break
+
+  # don't mess with Shrek
+  elif currentRoom == 'Shrek\'s House':
+      count += 1
+      if count == 5:
+          print("Shrek has eaten you. You should have gotten out of his swamp.")
+          break
